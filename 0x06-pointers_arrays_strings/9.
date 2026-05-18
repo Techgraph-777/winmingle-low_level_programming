@@ -1,0 +1,28 @@
+ function that prints an integer using only _putchar.
+void print_number(int n);
+main.c
+#include "main.h"
+
+int main(void)
+{
+    print_number(98);
+    _putchar('\n');
+    print_number(402);
+    _putchar('\n');
+    print_number(1024);
+    _putchar('\n');
+    print_number(0);
+    _putchar('\n');
+    print_number(-98);
+    _putchar('\n');
+    return (0);
+}
+
+Expected Output
+98
+402
+1024
+0
+-98
+
+

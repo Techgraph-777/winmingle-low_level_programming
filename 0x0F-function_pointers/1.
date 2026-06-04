@@ -1,0 +1,58 @@
+Prototype: void array_iterator(int *array, size_t size, void (*action)(int)); Example:
+greenfield@GREENFIELD:~/0x0e. Function pointers$ cat 1-main.c
+#include <stdio.h>
+#include "function_pointers.h"
+
+/**
+ * print_elem - prints an integer
+ * @elem: the integer to print
+ *
+ * Return: Nothing.
+ */
+void print_elem(int elem)
+{
+    printf("%d\n", elem);
+}
+
+/**
+ * print_elem_hex - prints an integer, in hexadecimal
+ * @elem: the integer to print
+ *
+ * Return: Nothing.
+ */
+void print_elem_hex(int elem)
+{
+    printf("0x%x\n", elem);
+}
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    int array[5] = {0, 98, 402, 1024, 4096};
+
+    array_iterator(array, 5, &print_elem);
+    array_iterator(array, 5, &print_elem_hex);
+    return (0);
+}
+greenfield@GREENFIELD:~/0x0e. Function pointers$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 1-main.c 1-array_iterator.c -o b
+greenfield@GREENFIELD:~/0x0e. Function pointers$ ./b 
+0
+98
+402
+1024
+4096
+0x0
+0x62
+0x192
+0x400
+0x1000
+greenfield@GREENFIELD:~//0x0e. Function pointers$ 
+Repo:
+• GitHub repository: **winmingle-low_level_programming**  
+• Directory: `0x0F-function_pointers`  
+• File: `1-array_iterator.c`
+
